@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`lrn-gradebook`
+A LRN element
+
+@demo demo/index.html 
+-->
+
+<dom-module id="lrn-gradebook">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'lrn-gradebook',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'lrn-gradebook',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
