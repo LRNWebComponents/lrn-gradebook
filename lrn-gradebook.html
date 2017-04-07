@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-data-table/iron-data-table.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
 
 <!--
 `lrn-gradebook`
@@ -9,23 +11,24 @@ A LRN element
 
 <dom-module id="lrn-gradebook">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
+    <iron-ajax url="demo/data.json" last-response="{{data}}" auto></iron-ajax>
+		  <iron-data-table items="[[data]]">
+		    <data-table-column name="First Name">
+		      <template>[[item.name.first]]</template>
+		    </data-table-column>
+		    <data-table-column name="Last Name">
+		      <template>[[item.name.last]]</template>
+		    </data-table-column>
+		  </iron-data-table>
   </template>
 
   <script>
     Polymer({
 
       is: 'lrn-gradebook',
-
       properties: {
-        prop1: {
-          type: String,
-          value: 'lrn-gradebook',
+        data: {
+          type: Object,
         },
       },
 
