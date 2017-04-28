@@ -10,6 +10,11 @@ A LRN element
 -->
 
 <dom-module id="lrn-gradebook">
+<style>
+  data-table-row {
+    border: 10px solid black;
+  }
+</style>
   <template>
     <iron-ajax url="demo/data.json" last-response="{{data}}" auto></iron-ajax>
 		  <iron-data-table items="[[data]]">
